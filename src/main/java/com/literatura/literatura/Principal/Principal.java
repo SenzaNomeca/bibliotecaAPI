@@ -51,8 +51,12 @@ public class Principal {
                     ---------------------------------------------------
                     """;
             System.out.println(menu);
-            opcion = teclado.nextInt();
-            teclado.nextLine();
+            try {
+                opcion = Integer.parseInt(teclado.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingrese un número válido.");
+                continue;
+            }
 
             switch (opcion){
                 case 1:
